@@ -4,6 +4,7 @@ package org.example
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
 
+    var lastId = 0
 
     println("== 명언 앱 ==")
 
@@ -18,8 +19,9 @@ fun main() {
                 val saying = readlnOrNull() ?: ""
                 print("작가: ")
                 val author = readlnOrNull() ?: ""
+                lastId ++
 
-                println("${saying} : ${author} 명언이 등록되었습니다.")
+                println("${lastId}번 명언이 등록되었습니다.")
             }
         }
     }
