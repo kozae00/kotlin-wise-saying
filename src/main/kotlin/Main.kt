@@ -1,8 +1,12 @@
 package com.think
 
+import com.think.domain.wiseSaying.entity.WiseSaying
+
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 fun main() {
+
+    val wiseSayings = mutableListOf<WiseSaying>()
 
     var lastId = 0
 
@@ -18,9 +22,17 @@ fun main() {
                 val saying = readlnOrNull() ?: ""
                 print("작가: ")
                 val author = readlnOrNull() ?: ""
-                lastId++
+                val id = ++lastId
+                wiseSayings.add(WiseSaying(id, saying, author))
 
                 println("${lastId}번 명언이 등록되었습니다.")
+            }
+            "목록" -> {
+                println("번호 / 작가 / 명언")
+                println("----------------------")
+                wiseSayings.forEach {
+                    println("${it.id} / ${it.author} / ${it.saying}")
+                }
             }
         }
     }
