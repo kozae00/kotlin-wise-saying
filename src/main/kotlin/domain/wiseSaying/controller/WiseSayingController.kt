@@ -1,11 +1,11 @@
 package org.example.domain.wiseSaying.controller
 
-import org.example.domain.wiseSaying.entity.WiseSaying
-import org.example.domain.wiseSaying.service.WiseSayingService
+
 import org.example.global.Request
+import org.example.global.SingletonScope
 
 class WiseSayingController{
-    private val wiseSayingService = WiseSayingService()
+    private val wiseSayingService = SingletonScope.wiseSayingService
 
     fun write() {
         print("명언: ")

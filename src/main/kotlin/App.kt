@@ -1,13 +1,13 @@
 package org.example
 
-import org.example.domain.system.controller.SystemController
-import org.example.domain.wiseSaying.controller.WiseSayingController
 import org.example.global.Request
+import org.example.global.SingletonScope
 
 class App {
+
     fun run() {
-        val wiseSayingController = WiseSayingController()
-        val systemController = SystemController()
+        val wiseSayingController = SingletonScope.wiseSayingController
+        val systemController = SingletonScope.systemController
 
         println("== 명언 앱 ==")
         while (true) {

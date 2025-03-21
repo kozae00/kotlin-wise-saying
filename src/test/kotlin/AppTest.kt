@@ -1,7 +1,15 @@
 import org.assertj.core.api.Assertions.assertThat
+import org.example.global.SingletonScope
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 
 class AppTest {
+
+    @BeforeEach
+    fun setUp() {
+        SingletonScope.wiseSayingRepository.clear()
+    }
+
 
     @Test
     fun `명언 등록`() {
