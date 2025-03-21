@@ -6,7 +6,7 @@ import org.example.global.SingletonScope
 class WiseSayingService(
 
 ) {
-    private val wiseSayingRepository = SingletonScope.wiseSayingRepository
+    private val wiseSayingRepository = SingletonScope.wiseSayingMemRepository
 
     fun write(saying: String, author: String): WiseSaying {
         return wiseSayingRepository.save(WiseSaying(saying = saying, author = author))
