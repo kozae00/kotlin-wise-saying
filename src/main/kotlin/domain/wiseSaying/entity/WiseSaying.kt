@@ -11,11 +11,10 @@ data class WiseSaying(
 
     val jsonStr: String
         get() = """
-             {
-                 "id": $id,
-                 "saying": "$saying",
-                 "author": "$author"
-             }
-         """.trimIndent()
+            {
+                "id": $id,
+                "saying": "$saying",
+                "author": "$author"
+            }
+        """.trimIndent()
 }
-

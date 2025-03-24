@@ -4,7 +4,6 @@ import org.example.global.Request
 import org.example.global.SingletonScope
 
 class App {
-
     fun run() {
         val wiseSayingController = SingletonScope.wiseSayingController
         val systemController = SingletonScope.systemController
@@ -32,6 +31,4 @@ class App {
             }
         }
     }
-
-
 }
