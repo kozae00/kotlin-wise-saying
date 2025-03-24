@@ -2,6 +2,7 @@ package org.example.domain.wiseSaying.controller
 
 
 import org.example.global.Request
+import org.example.global.SingletonScope
 
 class WiseSayingController{
     private val wiseSayingService = SingletonScope.wiseSayingService

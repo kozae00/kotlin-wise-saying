@@ -1,7 +1,10 @@
 package domain.wiseSaying.repository
 
 import org.example.domain.wiseSaying.entity.WiseSaying
+import org.example.global.SingletonScope
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
+import org.assertj.core.api.Assertions.assertThat
 
 class WiseSayingFileRepositoryTest {
 
@@ -43,5 +46,19 @@ class WiseSayingFileRepositoryTest {
         val lastId = wiseSayingFileRepository.loadLastId()
 
         assertThat(lastId).isEqualTo(3)
+    }
+
+    @Test
+    fun `findAll`() {
+        val w1 = wiseSayingFileRepository
+            .save(WiseSaying(saying = "인생은 짧고 예술은 길다.", author = "헨리 장"))
+        val w2 = wiseSayingFileRepository
+            .save(WiseSaying(saying = "내 죽음을 적에게 알리지 말라", author = "이순신"))
+
+        val result = wiseSayingFileRepository.findAll()
+        val count = result.size
+
+        assertThat(count).isEqualTo(2)
+        assertThat(result).containsExactly(w1, w2)
     }
 }
