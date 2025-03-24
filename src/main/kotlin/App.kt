@@ -21,6 +21,7 @@ class App {
                     break
                 }
 
+                "빌드" -> wiseSayingController.build()
                 "등록" -> wiseSayingController.write()
                 "목록" -> wiseSayingController.list()
                 "삭제" -> wiseSayingController.delete(rq)
